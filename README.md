@@ -1,1 +1,3 @@
 # animated-input
+
+![](./thumbnail.png) 
