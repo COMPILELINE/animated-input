@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+
+.wrapper {
+    width: 450px;
+    padding: 30px;
+    background-color: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .1);
+}
+
+.wrapper .input-data {
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+
+.wrapper .input-data input {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border-bottom: 2px solid #eee;
+    color: #eee;
+    font-size: 15px;
+}
+
+.wrapper .input-data input:valid~label,
+.wrapper .input-data input:focus~label {
+    transform: translateY(-20px);
+    transition: .5s ease;
+    color: blue;
+}
+
+.wrapper .input-data label {
+    position: absolute;
+    color: #eee;
+    bottom: 10px;
+    left: 0;
+    transition: .5s ease;
+    font-size: 15px;
+}
+
+.wrapper .input-data .outline {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+}
+
+.wrapper .input-data .outline::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transition: transform .3s ease;
+}
+
+.wrapper .input-data input:valid~.outline::before,
+.wrapper .input-data input:focus~.outline::before {
+    background-color: blue;
+    transform: scaleX(1);
+}
